@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo Application</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📝 Todo Application</h1>
+            <p>Manage your tasks with ease</p>
+        </header>
+
+        <div class="todo-form">
+            <h2>Add New Todo</h2>
+            <form id="todoForm">
+                <div class="form-group">
+                    <label for="title">Title *</label>
+                    <input type="text" id="title" name="title" required placeholder="Enter todo title">
+                </div>
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <textarea id="description" name="description" placeholder="Enter todo description (optional)"></textarea>
+                </div>
+                <button type="submit">Add Todo</button>
+            </form>
+        </div>
+
+        <div class="todos-container">
+            <h2>Your Todos</h2>
+            <div class="filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="active">Active</button>
+                <button class="filter-btn" data-filter="completed">Completed</button>
+            </div>
+            <div id="todosList" class="todos-list">
+                <!-- Todos will be loaded here -->
+            </div>
+        </div>
+
+        <div class="logs-container">
+            <h2>Activity Logs</h2>
+            <button id="refreshLogs" class="refresh-btn">🔄 Refresh Logs</button>
+            <div id="logsList" class="logs-list">
+                <!-- Logs will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Modal -->
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Edit Todo</h2>
+            <form id="editForm">
+                <input type="hidden" id="editId">
+                <div class="form-group">
+                    <label for="editTitle">Title *</label>
+                    <input type="text" id="editTitle" name="title" required>
+                </div>
+                <div class="form-group">
+                    <label for="editDescription">Description</label>
+                    <textarea id="editDescription" name="description"></textarea>
+                </div>
+                <div class="form-group checkbox-group">
+                    <input type="checkbox" id="editCompleted" name="completed">
+                    <label for="editCompleted">Completed</label>
+                </div>
+                <button type="submit">Update Todo</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
