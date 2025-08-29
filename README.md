@@ -20,4 +20,4 @@ A full-stack todo application with create, edit, delete functionality, database 
 ## Setup
 1. Install dependencies: `npm install`
 2. Start the server: `npm start`
-3. Open http://localhost:3000 in your browser
+3. Open https://todo-app-k6of.onrender.com in your browser
